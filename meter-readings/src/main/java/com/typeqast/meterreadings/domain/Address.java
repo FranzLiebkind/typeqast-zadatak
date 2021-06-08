@@ -1,12 +1,30 @@
-package com.typeqast.meterreadings.model;
+package com.typeqast.meterreadings.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "address")
 public class Address {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "street")
     private String street;
+
+    @Column(name = "city")
     private String city;
+
+    @Column(name = "state")
     private String state;
+
+    @Column(name = "postal_code")
     private String postalCode;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Client client;
 
     public Long getId() {
         return id;
@@ -46,5 +64,13 @@ public class Address {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
