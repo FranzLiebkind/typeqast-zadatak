@@ -1,11 +1,12 @@
 package com.typeqast.meterreadings.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "meter")
-public class Meter {
+public class Meter implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

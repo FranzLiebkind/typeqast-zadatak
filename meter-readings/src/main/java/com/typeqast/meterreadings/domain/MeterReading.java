@@ -4,10 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.typeqast.meterreadings.domain.enumeration.Month;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "meter_reading")
-public class MeterReading {
+public class MeterReading implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
