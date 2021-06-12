@@ -1,12 +1,12 @@
 package com.typeqast.meterreadings.service.contract;
 
-import com.typeqast.meterreadings.domain.Meter;
+import com.typeqast.meterreadings.domain.dto.MeterDTO;
 
 import java.util.List;
 
 public interface IMeterService {
 
-    List<Meter> findAll();
+    List<MeterDTO> findAll();
 
-    Meter findById(Long id);
+    MeterDTO findById(Long id);
 }

@@ -8,6 +8,12 @@ public class MeterDTO implements Serializable {
     private String model;
     private Long clientId;
 
+    public MeterDTO(Long id, String model, Long clientId) {
+        this.id = id;
+        this.model = model;
+        this.clientId = clientId;
+    }
+
     public Long getId() {
         return id;
     }

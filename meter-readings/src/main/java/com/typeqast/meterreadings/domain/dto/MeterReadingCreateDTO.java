@@ -15,6 +15,13 @@ public class MeterReadingCreateDTO implements Serializable {
 
     private Double electricityConsumption;
 
+    public MeterReadingCreateDTO(Integer year, Month month, Long meterId, Double electricityConsumption) {
+        this.year = year;
+        this.month = month;
+        this.meterId = meterId;
+        this.electricityConsumption = electricityConsumption;
+    }
+
     public Integer getYear() {
         return year;
     }

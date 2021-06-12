@@ -10,6 +10,11 @@ public class MeterReadingDTO implements Serializable {
     private Integer year;
     private Map<Month, Double> meterReadings;
 
+    public MeterReadingDTO() {
+        this.year = year;
+        this.meterReadings = meterReadings;
+    }
+
     public Integer getYear() {
         return year;
     }

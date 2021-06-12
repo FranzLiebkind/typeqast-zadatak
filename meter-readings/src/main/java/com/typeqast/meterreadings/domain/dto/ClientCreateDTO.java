@@ -20,6 +20,13 @@ public class ClientCreateDTO implements Serializable {
     @NotNull
     private MeterCreateDTO meter;
 
+    public ClientCreateDTO(String firstName, String lastName, AddressDTO address, MeterCreateDTO meter) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.meter = meter;
+    }
+
     public String getFirstName() {
         return firstName;
     }

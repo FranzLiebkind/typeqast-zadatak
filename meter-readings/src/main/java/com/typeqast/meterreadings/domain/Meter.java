@@ -22,6 +22,17 @@ public class Meter implements Serializable {
     @OneToMany(mappedBy = "meter")
     private List<MeterReading> meterReadings;
 
+    public Meter(Long id, String model, Client client, List<MeterReading> meterReadings) {
+        this.id = id;
+        this.model = model;
+        this.client = client;
+        this.meterReadings = meterReadings;
+    }
+
+    public Meter() {
+
+    }
+
     public Long getId() {
         return id;
     }

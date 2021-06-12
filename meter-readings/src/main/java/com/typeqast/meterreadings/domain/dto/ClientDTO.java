@@ -10,6 +10,14 @@ public class ClientDTO implements Serializable {
     private AddressDTO address;
     private MeterCreateDTO meter;
 
+    public ClientDTO(Long id, String firstName, String lastName, AddressDTO address, MeterCreateDTO meter) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.meter = meter;
+    }
+
     public Long getId() {
         return id;
     }

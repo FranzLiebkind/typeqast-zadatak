@@ -9,6 +9,13 @@ public class AddressDTO implements Serializable {
     private String state;
     private String postalCode;
 
+    public AddressDTO(String street, String city, String state, String postalCode) {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.postalCode = postalCode;
+    }
+
     public String getStreet() {
         return street;
     }

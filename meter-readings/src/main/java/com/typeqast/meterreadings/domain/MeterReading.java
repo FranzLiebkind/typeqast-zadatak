@@ -28,6 +28,18 @@ public class MeterReading implements Serializable {
     @JsonIgnoreProperties("meterReadings")
     private Meter meter;
 
+    public MeterReading(Long id, Integer year, Month month, Double electricityConsumption, Meter meter) {
+        this.id = id;
+        this.year = year;
+        this.month = month;
+        this.electricityConsumption = electricityConsumption;
+        this.meter = meter;
+    }
+
+    public MeterReading() {
+
+    }
+
     public Long getId() {
         return id;
     }

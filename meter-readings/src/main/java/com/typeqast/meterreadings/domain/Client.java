@@ -23,6 +23,18 @@ public class Client implements Serializable {
     @OneToOne(mappedBy = "client")
     private Meter meter;
 
+    public Client(Long id, String firstName, String lastName, Address address, Meter meter) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.meter = meter;
+    }
+
+    public Client() {
+
+    }
+
     public Long getId() {
         return id;
     }

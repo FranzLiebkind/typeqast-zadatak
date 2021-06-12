@@ -6,6 +6,10 @@ public class MeterCreateDTO implements Serializable {
 
     private String model;
 
+    public MeterCreateDTO(String model) {
+        this.model = model;
+    }
+
     public String getModel() {
         return model;
     }

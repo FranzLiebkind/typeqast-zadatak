@@ -27,6 +27,19 @@ public class Address implements Serializable {
     @JoinColumn(unique = true)
     private Client client;
 
+    public Address(Long id, String street, String city, String state, String postalCode, Client client) {
+        this.id = id;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.postalCode = postalCode;
+        this.client = client;
+    }
+
+    public Address() {
+
+    }
+
     public Long getId() {
         return id;
     }

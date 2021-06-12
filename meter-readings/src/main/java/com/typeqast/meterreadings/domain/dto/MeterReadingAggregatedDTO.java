@@ -7,6 +7,11 @@ public class MeterReadingAggregatedDTO implements Serializable {
     private Integer year;
     private Double electricityConsumptionAggregated;
 
+    public MeterReadingAggregatedDTO() {
+        this.year = year;
+        this.electricityConsumptionAggregated = electricityConsumptionAggregated;
+    }
+
     public Integer getYear() {
         return year;
     }
