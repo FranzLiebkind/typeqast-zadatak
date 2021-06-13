@@ -25,9 +25,10 @@ public class MeterService implements IMeterService {
         this.meterMapper = meterMapper;
     }
 
+
     @Override
     public List<MeterDTO> findAll() {
-        return meterRepository.findAll().stream().map(meterMapper::toEntity).collect(Collectors.toList());
+        return meterRepository.findAll().stream().map(meterMapper::toDto).collect(Collectors.toList());
     }
 
     @Override
