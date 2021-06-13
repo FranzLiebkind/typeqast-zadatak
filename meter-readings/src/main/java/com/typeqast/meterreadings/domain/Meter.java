@@ -9,7 +9,8 @@ import java.util.List;
 public class Meter implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @Column(name = "model")
@@ -22,12 +23,6 @@ public class Meter implements Serializable {
     @OneToMany(mappedBy = "meter")
     private List<MeterReading> meterReadings;
 
-    public Meter(Long id, String model, Client client, List<MeterReading> meterReadings) {
-        this.id = id;
-        this.model = model;
-        this.client = client;
-        this.meterReadings = meterReadings;
-    }
 
     public Meter() {
 

@@ -11,7 +11,8 @@ import java.io.Serializable;
 public class MeterReading implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @Column(name = "year")
@@ -27,14 +28,6 @@ public class MeterReading implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("meterReadings")
     private Meter meter;
-
-    public MeterReading(Long id, Integer year, Month month, Double electricityConsumption, Meter meter) {
-        this.id = id;
-        this.year = year;
-        this.month = month;
-        this.electricityConsumption = electricityConsumption;
-        this.meter = meter;
-    }
 
     public MeterReading() {
 

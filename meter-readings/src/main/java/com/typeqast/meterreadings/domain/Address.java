@@ -8,7 +8,8 @@ import java.io.Serializable;
 public class Address implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @Column(name = "street")
@@ -26,15 +27,6 @@ public class Address implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private Client client;
-
-    public Address(Long id, String street, String city, String state, String postalCode, Client client) {
-        this.id = id;
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.postalCode = postalCode;
-        this.client = client;
-    }
 
     public Address() {
 

@@ -8,7 +8,8 @@ import java.io.Serializable;
 public class Client implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @Column(name = "first_name", length = 50)
@@ -22,14 +23,6 @@ public class Client implements Serializable {
 
     @OneToOne(mappedBy = "client")
     private Meter meter;
-
-    public Client(Long id, String firstName, String lastName, Address address, Meter meter) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.meter = meter;
-    }
 
     public Client() {
 
